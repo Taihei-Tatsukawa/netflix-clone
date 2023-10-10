@@ -23,3 +23,8 @@ model User {
     sessions Session[]
     accounts Account[]
 }
+
+model Account {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+}
