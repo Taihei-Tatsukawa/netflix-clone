@@ -1,3 +1,25 @@
+## Setup 手順
+
+1. パッケージのインストール
+
+   ```zsh
+   npm install
+   ```
+
+2. prisma client の初期化
+
+   ```zsh
+   npx prisma generate
+   ```
+
+3. ローカル実行
+
+   ```zsh
+   npx run dev
+   ```
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
