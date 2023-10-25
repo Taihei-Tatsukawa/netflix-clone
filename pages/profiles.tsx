@@ -25,30 +25,32 @@ const Profiles = () => {
   const { data: user } = useCurrentUser();
 
   return (
-    <div className="flex items-center h-full justify-center">
+    <div className="flex h-full items-center justify-center">
       <div className="flex flex-col">
-        <h1 className="text-3xl md:text-6xl text-white text-center">Who is watching？</h1>
-        <div className="flex items-center justify-center gap-8 mt-10">
+        <h1 className="text-center text-3xl text-white md:text-6xl">
+          Who is watching？
+        </h1>
+        <div className="mt-10 flex items-center justify-center gap-8">
           <div
             className=""
             onClick={() => {
               router.push('/');
             }}
           >
-            <div className="group flex-row w-44 mx-auto">
+            <div className="group mx-auto w-44 flex-row">
               <div
                 className="
-                    w-44
-                    h-44
-                    rounded-md
                     flex
+                    h-44
+                    w-44
                     items-center
                     justify-center
+                    overflow-hidden
+                    rounded-md
                     border-2
                     border-transparent
                     group-hover:cursor-pointer
                     group-hover:border-white
-                    overflow-hidden
               "
               >
                 <img src="/images/default-slate.png" alt="Profile" />
@@ -56,9 +58,9 @@ const Profiles = () => {
               <div
                 className="
                     mt-4
-                    text-gray-400
-                    text-2xl
                     text-center
+                    text-2xl
+                    text-gray-400
                     group-hover:text-white
               "
               >
