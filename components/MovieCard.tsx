@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import { BsFillPlayFill } from 'react-icons/bs';
@@ -8,6 +9,8 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+  const router = useRouter();
+
   return (
     <div className="group  relative col-span-1 h-[12vw]">
       <img
@@ -88,7 +91,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
               lg:h-10
               lg:w-10
             "
-              onClick={() => {}}
+              onClick={() => router.push(`/watch/${data?.id}`)}
             >
               <BsFillPlayFill size={30} />
             </div>
