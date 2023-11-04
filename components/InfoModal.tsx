@@ -2,6 +2,8 @@ import useInfoModal from '@/hooks/useInfoModal';
 import useMovie from '@/hooks/useMovie';
 import React, { useCallback, useEffect, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import FavoriteButton from './FavoriteButton';
+import PlayButton from './PlayButton';
 
 interface InfoModalProps {
   visible?: boolean;
@@ -32,19 +34,19 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
   return (
     <div
       className="
-    fixed
-    inset-0
-    z-50
-    flex
-    items-center
-    justify-center
-    overflow-y-auto
-    overflow-x-hidden
-    bg-black
-    bg-opacity-80
-    transition
-    duration-300
-  "
+        fixed
+        inset-0
+        z-50
+        flex
+        items-center
+        justify-center
+        overflow-y-auto
+        overflow-x-hidden
+        bg-black
+        bg-opacity-80
+        transition
+        duration-300
+      "
     >
       <div
         className="
@@ -96,7 +98,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                 bg-black
                 bg-opacity-70
               "
-              onClick={() => {}}
+              onClick={handleClose}
             >
               <AiOutlineClose className="text-white" size={20} />
             </div>
@@ -105,8 +107,24 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
               className="
                 absolute
                 bottom-[10%]
+                left-10
               "
-            ></div>
+            >
+              <p className="mb-8 h-full text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+                {data?.title}
+              </p>
+              <div className="flex flex-row items-center gap-4">
+                <PlayButton movieId={data?.id} />
+                <FavoriteButton movieId={data?.id} />
+              </div>
+            </div>
+          </div>
+
+          <div className="px-12 py-8">
+            <p className="text-lg font-semibold text-green-400">New</p>
+            <p className="text-lg text-white">{data?.duration}</p>
+            <p className="text-lg text-white">{data?.genre}</p>
+            <p className="text-lg text-white">{data?.description}</p>
           </div>
         </div>
       </div>
